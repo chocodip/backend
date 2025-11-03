@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1uk2b(77-vab0izupp%-kx8)u(li-bn^=3!8bd8ckhv)q(t2or
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','127.0.0.1:8000','192.168.100.14','http://192.168.100.14:8000/','192.168.100.14:8000','https://mybackend-lw3u.onrender.com','mybackend-lw3u.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1','127.0.0.1:8000','192.168.100.14','http://192.168.100.14:8000/','192.168.100.14:8000','https://backend-miyn.onrender.com','backend-miyn.onrender.com']
 
 
 # Application definition
@@ -125,5 +125,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
- "https://mybackend-lw3u.onrender.com",
+ "https://backend-miyn.onrender.com",
 ]
