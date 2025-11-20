@@ -21,7 +21,7 @@ def get_users(request):
     return Response(serializer.data)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def user_detail(request, pk):
     try:
         user = User.objects.get(pk=pk)
@@ -33,9 +33,10 @@ def user_detail(request, pk):
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
-    # PUT (update user)
-    elif request.method == 'PUT':
-        serializer = UserSerializer(user, data=request.data)
+    # PUT (full update) and PATCH (partial update)
+    elif request.method in ('PUT', 'PATCH'):
+        partial = (request.method == 'PATCH')
+        serializer = UserSerializer(user, data=request.data, partial=partial)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
